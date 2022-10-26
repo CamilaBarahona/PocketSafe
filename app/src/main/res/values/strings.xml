@@ -35,5 +35,7 @@
     <string name="nameappsplash">PocketSave</string>
     <string name="txtmes">RESUMEN SEPTIEMBRE 2022</string>
     <string name="txtMonto">$700.000</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 </resources>

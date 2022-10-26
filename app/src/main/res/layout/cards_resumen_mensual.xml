@@ -44,9 +44,6 @@
                     android:text="@string/txtmes"
                     android:textSize="15sp"
                     android:textAppearance="?android:attr/textAppearanceLarge"/>
-                <Space
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"></Space>
                 <LinearLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -58,6 +55,9 @@
                         android:text="Monto Gastos: "
                         android:textSize="15sp"
                         />
+                    <Space
+                        android:layout_width="10sp"
+                        android:layout_height="10sp"/>
 
                     <TextView
                         android:id="@+id/tvGastosTotales"

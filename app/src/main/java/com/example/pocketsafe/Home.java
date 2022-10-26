@@ -1,6 +1,7 @@
 package com.example.pocketsafe;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -17,7 +18,7 @@ public class Home extends AppCompatActivity {
     private TextView tvSaludo;
     private RecyclerView rvLista;
     private MonthAdapter adapter;
-    private List<MonthModel> item;
+    private List<MonthModel> items;
 
     @SuppressLint("MissingInflatedId")
     @Override
@@ -29,21 +30,23 @@ public class Home extends AppCompatActivity {
         bundle = getIntent().getExtras();
         String saludo = bundle.getString("nombre");
         tvSaludo.append( "Bienvenid@"  + saludo);
-        initVIews();
+
+        initViews();
         initValues();
     }
-    private void initVIews() {
+    private void initViews() {
         rvLista = findViewById(R.id.recyclerMensual);
+        rvLista.setHasFixedSize(true);
     }
     private void initValues() {
-        LinearLayoutManager manager = new LinearLayoutManager(this);
+        GridLayoutManager manager = new GridLayoutManager(this, 1);
         rvLista.setLayoutManager(manager);
-        item = getItem();
-        adapter = new MonthAdapter(item);
+        items = getItems();
+        adapter = new MonthAdapter(items);
         rvLista.setAdapter(adapter);
     }
 
-    private List<MonthModel> getItem() {
+    private List<MonthModel> getItems() {
         List<MonthModel> itemList = new ArrayList<>();
         itemList.add(new MonthModel("JUNIO 2022", "$300.000", R.drawable.ic_launcher_background));
         itemList.add(new MonthModel("JULIO 2022", "$450.000", R.drawable.ic_launcher_background));

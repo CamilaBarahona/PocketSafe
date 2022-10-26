@@ -3,7 +3,7 @@ package com.example.pocketsafe;
 
 import java.io.Serializable;
 
-public class MonthModel implements Serializable {
+public class MonthModel {
     private String mes;
     private String monto;
     private int image;
