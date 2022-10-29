@@ -10,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.pocketsafe.menu.HomeFragment;
+import com.example.pocketsafe.menu.Menu;
+
 public class ConsultaNombre extends Activity {
 
     private EditText edNombre;
@@ -26,9 +29,10 @@ public class ConsultaNombre extends Activity {
             @Override
             public void onClick(View view) {
                 if (!edNombre.getText().toString().isEmpty()) {
-                    Intent intent =  new Intent( ConsultaNombre.this, Home.class);
+                    Intent intent =  new Intent( ConsultaNombre.this, Menu.class);
                     intent.putExtra("nombre", edNombre.getText().toString());
                     startActivity(intent);
+
                 } else {
                     Toast.makeText(ConsultaNombre.this, "Debes indicar un nombre", Toast.LENGTH_SHORT).show();
                 }
